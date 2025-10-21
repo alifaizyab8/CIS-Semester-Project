@@ -1,5 +1,7 @@
-#ifndef employee_h
-#define employee_h
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
+#define MAX_EMPLOYEES 30
+
 
 struct employee_name
 {
@@ -7,7 +9,7 @@ struct employee_name
     char lastname[20];
 };
 
-struct employees
+struct Employee
 {
     int id;
     struct employee_name emp;
@@ -22,5 +24,10 @@ struct employees
 
 
 };
+int addEmployee(struct Employee employees[], int *count);
+
+int removeEmployee(struct Employee employees[], int *count, int id);
+
+void initializeEmployees(struct Employee employees[], int size);
 
 #endif
