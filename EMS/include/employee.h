@@ -30,6 +30,6 @@ int removeEmployee(struct Employee employees[], int *count, int id);
 
 void initializeEmployees(struct Employee employees[], int size);
 
-void displayEmployee(const struct Employee employees[], int size, int id);
+void displaySingleEmployee(const struct Employee employees[], int size, int id);
 
 #endif
