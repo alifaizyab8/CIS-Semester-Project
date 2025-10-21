@@ -35,7 +35,7 @@ void printLoginTitle()
 }
 void line()
 {
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 150; i++)
     {
         printf("\033[1;36m=\033[35m");
     }
