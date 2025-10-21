@@ -98,8 +98,3 @@ void displayLoginScreen()
     printf("\n\n");
 }
 
-int main()
-{
-    displayLoginScreen();
-    return 0;
-}
