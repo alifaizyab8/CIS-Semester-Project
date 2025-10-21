@@ -1,6 +1,54 @@
-#include "employee.h"
-#include "login.h"
+#include "../include/employee.h"
+#include "../include/login.h"
 #include <stdio.h>
+#include <string.h>
+
+// Display a single employee by id
+// same functionality can be implemented to list all the employees
+void displaySingleEmployee(const struct Employee employees[], int size, int id)
+{
+    int found = 0;
+    line();
+    printf("\n\033[1;34mEmployee Details\033[0m\n");
+    line();
+
+    for (int i = 0; i < size; i++)
+    {
+        if (employees[i].id == id)
+        {
+            // TABULAR FORMAT FOR BETTER READABILITY
+            // Print table header
+            printf("\033[1;33m%-5s %-15s %-15s %-5s %-15s %-10s %-12s %-12s %-10s %-12s %-10s\033[0m\n",
+                   "ID", "First Name", "Last Name", "Age", "Position", "Salary", "Hourly Rate",
+                   "Worked Hrs", "Overtime", "Last Pay", "Performance Rating");
+            line();
+
+            // Print employee details in tabular format
+            printf("%-5d %-15s %-15s %-5d %-15s %-10.2f %-12.2f %-12d %-10d %-12.2f %-10.2f\n",
+                   employees[i].id,
+                   employees[i].emp.firstname,
+                   employees[i].emp.lastname,
+                   employees[i].age,
+                   employees[i].position,
+                   employees[i].salary,
+                   employees[i].hourly_rate,
+                   employees[i].worked_hours,
+                   employees[i].over_time,
+                   employees[i].last_paycheck,
+                   employees[i].performance_rating);
+
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        printf("\033[1;31mEmployee with ID %d not found.\033[0m\n", id);
+    }
+
+    line();
+}
 
 // Emolpyee Initialization function
 // This function is to be called at the start of the program to initialize the employee array
@@ -43,8 +91,7 @@ int addEmployee(struct Employee employees[], int *count)
         {
             // Intiialize new employee
             struct Employee newEmployee;
-            printf("Enter Employee ID: \n");
-            printf("Progress : |                     |\n");
+            printf("Enter Employee ID:\t\t\t |                     |\n");
             scanf("%d", &newEmployee.id);
 
             if (newEmployee.id <= 0)
@@ -61,25 +108,25 @@ int addEmployee(struct Employee employees[], int *count)
                     return 0; // Duplicate ID found
                 }
             }
-            printf("Enter First Name: \n");
-            printf("Progress : |====                 |\n");
+            printf("Enter First Name: \t\t\t |===                   |\n");
+
             scanf("%s", newEmployee.emp.firstname);
-            printf("Enter Last Name: \n");
-            printf("Progress : |======               |\n");
+            printf("Enter Last Name:  \t\t\t |======                |\n");
+
             scanf("%s", newEmployee.emp.lastname);
-            printf("Enter Age: \n");
-            printf("Progress : |=========            |\n");
+            printf("Enter Age:        \t\t\t |=========             |\n");
+
             scanf("%d", &newEmployee.age);
-            printf("Enter Position: \n");
-            printf("Progress : |============         |\n");
+            printf("Enter Position:   \t\t\t |=============         |\n");
+
             scanf("%s", newEmployee.position);
-            printf("Enter Salary: \n");
-            printf("Progress : |================     |\n");
+            printf("Enter Salary:     \t\t\t |================      |\n");
+
             scanf("%f", &newEmployee.salary);
-            printf("Enter Hourly Rate: \n");
-            printf("Progress : |==================== |\n");
+            printf("Enter Hourly Rate:\t\t\t |====================  |\n");
+
             scanf("%f", &newEmployee.hourly_rate);
-            printf("Progress : |=====================|\n");
+            printf("                  \t\t\t |======================|\n");
             // Worked hours and overtime can be initialized to 0
             newEmployee.worked_hours = 0;
             newEmployee.over_time = 0;
@@ -89,6 +136,8 @@ int addEmployee(struct Employee employees[], int *count)
             // Add new employee to the array
             employees[i] = newEmployee;
             (*count)++;
+            printf("Employee Profile created as : \n\n");
+            displaySingleEmployee(employees,MAX_EMPLOYEES, newEmployee.id);
             return 1; // Employee added successfully
         }
     }
@@ -101,6 +150,9 @@ int removeEmployee(struct Employee employees[], int *count, int id)
     line();
     printf("\033[1;34mRemoving Employee\033[0m\n");
     line();
+    printf("\n\n\nThis Employee is being removed...\n\n");
+    displaySingleEmployee(employees,MAX_EMPLOYEES, id);
+    printf("\n\n\n");
     // Search for the employee by ID
     for (int i = 0; i < MAX_EMPLOYEES; i++)
     {
@@ -124,49 +176,9 @@ int removeEmployee(struct Employee employees[], int *count, int id)
     }
     printf("Employee with ID %d not found.\n", id);
     return 0; // Employee not found
-}
 
-void displaySingleEmployee(const struct Employee employees[], int size, int id)
-{
-    int found = 0;
-    line();
-    printf("\n\033[1;34mEmployee Details\033[0m\n");
-    line();
 
-    for (int i = 0; i < size; i++)
-    {
-        if (employees[i].id == id)
-        {
-            // TABULAR FORMAT FOR BETTER READABILITY
-            // Print table header
-            printf("\033[1;33m%-5s %-15s %-15s %-5s %-15s %-10s %-12s %-12s %-10s %-12s %-10s\033[0m\n",
-                   "ID", "First Name", "Last Name", "Age", "Position", "Salary", "Hourly Rate",
-                   "Worked Hrs", "Overtime", "Last Pay", "Rating");
-            line();
 
-            // Print employee details in tabular format
-            printf("%-5d %-15s %-15s %-5d %-15s %-10.2f %-12.2f %-12d %-10d %-12.2f %-10.2f\n",
-                   employees[i].id,
-                   employees[i].emp.firstname,
-                   employees[i].emp.lastname,
-                   employees[i].age,
-                   employees[i].position,
-                   employees[i].salary,
-                   employees[i].hourly_rate,
-                   employees[i].worked_hours,
-                   employees[i].over_time,
-                   employees[i].last_paycheck,
-                   employees[i].performance_rating);
-
-            found = 1;
-            break;
-        }
-    }
-
-    if (!found)
-    {
-        printf("\033[1;31mEmployee with ID %d not found.\033[0m\n", id);
-    }
 
     line();
 }
