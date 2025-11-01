@@ -3,6 +3,7 @@
 #include "../include/employee.h"
 void showMenu(struct Employee employees[], int *employeeCount);
 
+
 // RUN COMMAND FOR NOW : gcc main.c employee.c login.c && ./a.exe
 int main()
 {
@@ -23,7 +24,6 @@ int main()
     //displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
 
 
-    // Commented out for testing
-    // displayLoginScreen();
+ void showMenu();
     return 0;
 }
