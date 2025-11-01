@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include "../include/login.h"
+#include "../include/employee.h"
+void showMenu(struct Employee employees[], int *employeeCount);
+
 int userID;
 char userPASS[7];
 int user_id[25] = {1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020,
@@ -96,5 +99,13 @@ void displayLoginScreen()
     printf("\n");
     line();
     printf("\n\n");
+        
+
+    
+    struct Employee employees[MAX_EMPLOYEES];
+    int employeeCount = 0;
+    initializeEmployees(employees, MAX_EMPLOYEES);
+    showMenu(employees, &employeeCount);
+
 }
 

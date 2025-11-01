@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "../include/login.h"
 #include "../include/employee.h"
+void showMenu(struct Employee employees[], int *employeeCount);
+
 // RUN COMMAND FOR NOW : gcc main.c employee.c login.c && ./a.exe
 int main()
 {
@@ -15,10 +17,10 @@ int main()
     initializeEmployees(employees, MAX_EMPLOYEES);
 
     // Testing Add Employee Function
-    addEmployee(employees, &employeeCount);
-    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
-    removeEmployee(employees, &employeeCount, employees[0].id);
-    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
+   // addEmployee(employees, &employeeCount);
+    //displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
+   // removeEmployee(employees, &employeeCount, employees[0].id);
+    //displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
 
 
     // Commented out for testing
