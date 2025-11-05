@@ -16,15 +16,13 @@ void displaySingleEmployee(const struct Employee employees[], int size, int id)
     {
         if (employees[i].id == id)
         {
-            // TABULAR FORMAT FOR BETTER READABILITY
-            // Print table header
-            printf("\033[1;33m%-5s %-15s %-15s %-5s %-15s %-10s %-12s %-12s %-10s %-12s %-10s\033[0m\n",
-                   "ID", "First Name", "Last Name", "Age", "Position", "Salary", "Hourly Rate",
-                   "Worked Hrs", "Overtime", "Last Pay", "Performance Rating");
+            // Table Header
+            printf("\033[1;33m%-5s %-15s %-15s %-5s %-15s %-10s %-12s %-10s %-10s\033[0m\n",
+                   "ID", "First Name", "Last Name", "Age", "Position", "Salary", "Working Hrs", "Overtime", "Rating");
             line();
 
-            // Print employee details in tabular format
-            printf("%-5d %-15s %-15s %-5d %-15s %-10.2f %-12.2f %-12d %-10d %-12.2f %-10.2f\n",
+            // Employee Data
+            printf("%-5d %-15s %-15s %-5d %-15s %-10.2f %-12d %-10d %-10.2f\n",
                    employees[i].id,
                    employees[i].emp.firstname,
                    employees[i].emp.lastname,
@@ -119,9 +117,9 @@ int addEmployee(struct Employee employees[], int *count)
             printf("Enter Salary:     \t\t\t |==================    |\n");
 
             scanf("%f", &newEmployee.salary);
-            printf("Enter Hourly Rate:\t\t\t |======================|\n");
-
-            // overtime can be initialized to 0
+            printf("Enter Working Hrs:\t\t\t |===================== |\n");
+            scanf("%d", &newEmployee.working_hours);
+            // Overtime can be initialized to 0
             newEmployee.over_time = 0;
             // Performance rating can be initialized to 0.0 because it is evaluated as per the formula > (TBDL)
             newEmployee.performance_rating = 0.0f;

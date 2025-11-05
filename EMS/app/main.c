@@ -6,7 +6,7 @@
 int main()
 {
     // Display Login Screen
-    displayLoginScreen();
+    //displayLoginScreen();
     // Employee array
     struct Employee employees[MAX_EMPLOYEES];
     // Where ever *count is used, it is to keep track of the number of employees currently in the system
@@ -16,10 +16,10 @@ int main()
     initializeEmployees(employees, MAX_EMPLOYEES);
 
     // Testing Add Employee Function
-   // addEmployee(employees, &employeeCount);
-    //displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
-   // removeEmployee(employees, &employeeCount, employees[0].id);
-    //displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
+    addEmployee(employees, &employeeCount);
+    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
+    removeEmployee(employees, &employeeCount, employees[0].id);
+    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
 
 
  void showMenu();
