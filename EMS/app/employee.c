@@ -167,3 +167,43 @@ int removeEmployee(struct Employee employees[], int *count, int id)
 
     line();
 }
+
+
+
+int loadEmployee(struct Employee employees[],int size)
+{
+    // This function loads employee data from a file
+    // it returns the number of employees loaded hence an integer
+    initializeEmployees(employees, size);
+    FILE *fptr = fopen("../helper/employee.txt", "r");
+    if (fptr == NULL)
+    {
+        printf("Error opening employee data file.\n");
+        return 0;
+    }
+
+    int employeeCount = 0;
+    while (fscanf(fptr, "%d,%49[^,],%49[^,],%d,%49[^,],%f,%d,%d,%f\n",
+        &employees[employeeCount].id,
+        employees[employeeCount].emp.firstname,
+        employees[employeeCount].emp.lastname,
+        &employees[employeeCount].age,
+        employees[employeeCount].position,
+        &employees[employeeCount].salary,
+        &employees[employeeCount].working_hours,
+        &employees[employeeCount].over_time,
+        &employees[employeeCount].performance_rating) == 9)
+        {
+            employeeCount++;
+            if (employeeCount >= size)
+            {
+                // No more space to load employees
+                printf("Maximum employee capacity reached while loading data.\n");
+                break; 
+            }
+        }
+    fclose(fptr);
+    printf("%d employees loaded from file.\n", employeeCount);
+    return employeeCount;
+
+}
