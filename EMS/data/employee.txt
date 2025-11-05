@@ -1,0 +1,10 @@
+101,Ali,Khan,25,Software Engineer,85000.50,40,5,4.8
+102,Sara,Ahmed,29,HR Manager,65000.00,38,3,4.6
+103,Usman,Rafiq,33,Project Lead,95000.00,40,7,4.9
+104,Hira,Malik,27,Data Analyst,72000.75,39,4,4.5
+105,Bilal,Saeed,31,UI Designer,68000.00,40,6,4.7
+106,Ayesha,Nadeem,24,Marketing Associate,55000.25,35,2,4.2
+107,Zain,Ali,30,Network Engineer,78000.00,40,8,4.4
+108,Amna,Yousuf,26,QA Tester,60000.00,37,3,4.3
+109,Omar,Faisal,28,System Administrator,82000.50,40,5,4.5
+110,Hassan,Farooq,34,Product Manager,99000.00,40,6,4.9
