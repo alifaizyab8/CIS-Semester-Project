@@ -10,7 +10,6 @@ void displaySingleEmployee(const struct Employee employees[], int size, int id)
     int found = 0;
     line();
     printf("\n\033[1;34mEmployee Details\033[0m\n");
-    line();
 
     for (int i = 0; i < size; i++)
     {
@@ -76,7 +75,6 @@ int addEmployee(struct Employee employees[], int *count)
 {
     line();
     printf("\033[1;34mAdding New Employee\033[0m\n");
-    line();
     // Check for an empty slot
     for (int i = 0; i < MAX_EMPLOYEES; i++)
     {
@@ -155,7 +153,7 @@ int removeEmployee(struct Employee employees[], int *count, int id)
             employees[i].age = 0;
             employees[i].position[0] = '\0';
             employees[i].salary = 0.0f;
-             employees[i].working_hours = 0;
+            employees[i].working_hours = 0;
             employees[i].over_time = 0;
             employees[i].performance_rating = 0.0f;
             (*count)--;
@@ -167,8 +165,6 @@ int removeEmployee(struct Employee employees[], int *count, int id)
 
     line();
 }
-
-
 
 int loadEmployee(struct Employee employees[], int size)
 {
@@ -209,4 +205,39 @@ int loadEmployee(struct Employee employees[], int size)
         printf("%d employees loaded from file.\n", employeeCount);
 
     return employeeCount;
+}
+
+int saveEmployeesToFile(const struct Employee employees[], int size)
+{
+    // const is used to prevent modification of employee data
+    FILE *fptr = fopen("../helper/employee.txt", "w");
+    if (fptr == NULL)
+    {
+        printf("Error opening file for saving employees.\n");
+        return 0;
+    }
+
+    int savedCount = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (employees[i].id != 0) // only save valid employees
+        {
+            fprintf(fptr, "%d,%s,%s,%d,%s,%.2f,%d,%d,%.2f\n",
+                    employees[i].id,
+                    employees[i].emp.firstname,
+                    employees[i].emp.lastname,
+                    employees[i].age,
+                    employees[i].position,
+                    employees[i].salary,
+                    employees[i].working_hours,
+                    employees[i].over_time,
+                    employees[i].performance_rating);
+            savedCount++;
+        }
+    }
+
+    fclose(fptr);
+    printf("%d employees saved successfully to file.\n", savedCount);
+    return savedCount;
 }

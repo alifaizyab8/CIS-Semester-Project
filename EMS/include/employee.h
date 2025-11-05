@@ -2,7 +2,6 @@
 #define EMPLOYEE_H
 #define MAX_EMPLOYEES 30
 
-
 struct employee_name
 {
     char firstname[20];
@@ -19,7 +18,6 @@ struct Employee
     int working_hours;
     int over_time;
     float performance_rating;
-
 };
 int addEmployee(struct Employee employees[], int *count);
 
@@ -27,7 +25,9 @@ int removeEmployee(struct Employee employees[], int *count, int id);
 
 void displaySingleEmployee(const struct Employee employees[], int size, int id);
 
-int loadEmployee(struct Employee employees[],int size);
-//initiazlie employee is a helper function to loadEmployee function
+int loadEmployee(struct Employee employees[], int size);
+// initiazlie employee is a helper function to loadEmployee function
 void initializeEmployees(struct Employee employees[], int size);
+
+int saveEmployeesToFile(const struct Employee employees[], int size);
 #endif
