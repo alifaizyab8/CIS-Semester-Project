@@ -74,7 +74,15 @@ void initializeEmployees(struct Employee employees[], int size)
 // It takes the employees array and a pointer to the current count of employees
 
 int addEmployee(struct Employee employees[], int *count)
-{
+{   
+
+    // Check if we can add more employees
+    if (*count >= MAX_EMPLOYEES) 
+    {
+    printf("Cannot add more employees. Maximum limit reached.\n");
+    return 0;
+    }
+
     struct Employee newEmp;
     int validID_Check = 0;
     line();
