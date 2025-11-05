@@ -24,13 +24,13 @@ int main()
         printf("Employee added successfully. Total Employees: %d\n", employeeCount);
     else
         printf("Failed to add employee.\n");
-    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
-    int temp2 = removeEmployee(employees, &employeeCount, employees[0].id);
+    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[10].id);
+    int temp2 = removeEmployee(employees, &employeeCount, employees[9].id);
     if (temp2)
         printf("Employee removed successfully. Total Employees: %d\n", employeeCount);
     else
         printf("Failed to remove employee.\n");
-    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[0].id);
+    displaySingleEmployee(employees, MAX_EMPLOYEES, employees[9].id);
 
 
  void showMenu();

@@ -214,16 +214,12 @@ int addEmployee(struct Employee employees[], int *count)
         while (getchar() != '\n')
             ;
     }
-
-    while (getchar() != '\n')
-        ;
-    // clear buffer
     while (getchar() != '\n')
         ;
     // Salary
     while (1)
     {
-        printf("Enter Salary (1000–1000000): ");
+        printf("Enter Salary (1000-1000000): ");
         if (scanf("%f", &newEmp.salary) != 1 || newEmp.salary < 1000 || newEmp.salary > 1000000)
         {
             printf("Invalid salary. Try again.\n");
@@ -283,7 +279,7 @@ int removeEmployee(struct Employee employees[], int *count, int id)
     {
         if (employees[i].id == id)
         {
-            printf("Are you sure you want to remove this employee ID : %d? (y/n): ", id);
+            printf("Are you sure you want to remove this employee (ID : %d) ? (y/n): ", id);
             char confirm;
             scanf(" %c", &confirm);
             if (confirm != 'y' && confirm != 'Y')
