@@ -31,7 +31,7 @@ void showMenu(struct Employee employees[], int *employeeCount)
 
         switch (choice)
         {
-        
+
         case 1:
             printf("\n\033[1;34m--- EMPLOYEE LIST ---\033[0m\n");
             // displayEmployees function assigned to CS - 104
@@ -79,7 +79,7 @@ void showMenu(struct Employee employees[], int *employeeCount)
 }
 
 void searchMenu(struct Employee employees[], int *employeeCount)
-{   
+{
     system("cls");
     int searchChoice;
     while (1)
@@ -95,22 +95,22 @@ void searchMenu(struct Employee employees[], int *employeeCount)
         if (scanf("%d", &searchChoice) != 1)
         {
             printf("Invalid input! Try again.\n");
-            while (getchar() != '\n');
+            while (getchar() != '\n')
+                ;
             continue;
         }
-        
 
         if (searchChoice == 1)
         {
-            //searchByID function
+            // searchByID function
         }
         else if (searchChoice == 2)
         {
-            //searchByName function
+            // searchByName function
         }
         else if (searchChoice == 3)
         {
-             //searchByAge function
+            // searchByAge function
         }
         else if (searchChoice == 4)
         {
@@ -122,7 +122,6 @@ void searchMenu(struct Employee employees[], int *employeeCount)
         }
 
         printf("\nPress Enter to continue...");
-        getchar(); 
+        getchar();
     }
-    
 }
