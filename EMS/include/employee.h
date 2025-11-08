@@ -30,4 +30,6 @@ int loadEmployee(struct Employee employees[], int size);
 void initializeEmployees(struct Employee employees[], int size);
 
 int saveEmployeesToFile(const struct Employee employees[], int size);
+void displayAllEmployees(const struct Employee employees[], int size);
+
 #endif

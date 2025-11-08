@@ -9,6 +9,7 @@ int main()
     // Very Important Lines below
     struct Employee employees[MAX_EMPLOYEES];
     int employeeCount = loadEmployee(employees, MAX_EMPLOYEES);
+    displayAllEmployees(employees, employeeCount);
 
     showMenu(employees, &employeeCount);
 
