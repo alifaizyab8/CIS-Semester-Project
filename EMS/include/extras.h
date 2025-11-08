@@ -4,5 +4,6 @@
 #include "employee.h"
 
 void showMenu(struct Employee employees[], int *employeeCount);
+void searchMenu(struct Employee employees[], int *employeeCount);
 
 #endif

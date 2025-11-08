@@ -108,7 +108,8 @@ int addEmployee(struct Employee employees[], int *count)
         {
             if (employees[i].id == newEmp.id)
             {
-                printf("Error: Employee ID %d already exists.\n", newEmp.id);
+                // \033[1;31mThis text is red!\033[0m\n
+                printf("\033[1;31m ERROR : Employee with ID %d already Exists\033[0m\n", newEmp.id);
                 validID_Check = 0;
                 break;
             }
