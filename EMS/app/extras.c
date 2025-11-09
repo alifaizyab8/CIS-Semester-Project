@@ -105,14 +105,17 @@ void searchMenu(struct Employee employees[], int *employeeCount)
         if (searchChoice == 1)
         {
             // searchByID function
+            printf("Search by ID selected, under development\n");
         }
         else if (searchChoice == 2)
         {
             // searchByName function
+            printf("Search by Name selected, under development\n");
         }
         else if (searchChoice == 3)
         {
             // searchByAge function
+            printf("Search by Age selected, under development\n");
         }
         else if (searchChoice == 4)
         {

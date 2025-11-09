@@ -6,14 +6,13 @@
 int main()
 {
 
-    // Very Important Lines below
-    struct Employee employees[MAX_EMPLOYEES];
-    int employeeCount = loadEmployee(employees, MAX_EMPLOYEES);
-    displayAllEmployees(employees, employeeCount);
+        // Very Important Lines below
+        struct Employee employees[MAX_EMPLOYEES];
+        int employeeCount = loadEmployee(employees, MAX_EMPLOYEES);
 
-    // showMenu(employees, &employeeCount);
+        showMenu(employees, &employeeCount);
 
-    return 0;
+        return 0;
 }
 /*
 To run the program, compile all the .c files together and execute the resulting binary.
