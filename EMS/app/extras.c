@@ -144,7 +144,7 @@ void displayAllEmployees(const struct Employee employees[], int employeeCount)
 
     for (int i = 0; i < employeeCount; i++)
     {
-        printf("%-5d %-15s %-15s %-5d %-25s %-15f %-10d %-10d %-5f\n",
+        printf("%-5d %-15s %-15s %-5d %-25s %-15.2f %-10d %-10d %-5.1f\n",
                employees[i].id,
                employees[i].emp.firstname,
                employees[i].emp.lastname,
