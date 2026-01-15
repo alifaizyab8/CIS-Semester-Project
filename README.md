@@ -8,9 +8,3 @@ Member 1 – Ali Faizyab Khan
 Member 2 – Anshara 
 
 Member 3 – Syed Waqar Wasif 
-
-Ali Faizyab Khan has commited and synced
-
-Syed Waqar Wasif has commited and synced 
-
-Anshara Amir has commited and synced.
